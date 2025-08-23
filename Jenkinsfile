@@ -18,9 +18,9 @@ pipeline {
             }
         }
         
-        }
+        
 
-    stages {
+    
         stage('Plan') {
             steps {
                sh """
@@ -30,9 +30,9 @@ pipeline {
             }
         }
         
-        }    
+            
 
-    stages {
+    
         stage('Deploy') {
             input{
                 message "should we continue?"
@@ -61,6 +61,6 @@ pipeline {
             echo 'this will run when code fails'
         }
     }
-    }
+    
   
   
