@@ -19,6 +19,20 @@ pipeline {
         }
         
         }
+
+    post {
+        always {
+            echo 'this code always run'
+            deleteDir()
+        }
+        
+        success {
+            echo 'this will run when code success'
+        }
+        failure {
+            echo 'this will run when code fails'
+        }
+    }
     }
   
   
