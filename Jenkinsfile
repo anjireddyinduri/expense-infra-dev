@@ -20,6 +20,34 @@ pipeline {
         
         }
 
+    stages {
+        stage('Plan') {
+            steps {
+               sh """
+                cd 01-vpc
+                terraform plan
+               """
+            }
+        }
+        
+        }    
+
+    stages {
+        stage('Deploy') {
+            input{
+                message "should we continue?"
+                ok "Yes, we should ."
+            }
+            steps {
+               sh """
+                cd 01-vpc
+                terraform apply -auto-approve
+               """
+            }
+        }
+        
+        }        
+
     post {
         always {
             echo 'this code always run'
