@@ -21,8 +21,7 @@ pipeline {
                """
             }
         }
-        
-        
+            
 
     
         stage('Plan') {
@@ -38,8 +37,7 @@ pipeline {
                """
             }
         }
-        
-            
+                
 
     
         stage('Deploy') {
@@ -79,7 +77,7 @@ pipeline {
 
     post {
         always {
-            echo 'this code always run'
+            echo 'this code will always run'
             deleteDir()
         }
         
