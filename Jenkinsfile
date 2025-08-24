@@ -85,7 +85,7 @@ pipeline {
             echo 'this will run when code success'
         }
         failure {
-            echo 'this will run when code fails'
+            echo 'this run when code fails'
         }
     }
     
